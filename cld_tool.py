@@ -4146,7 +4146,7 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=7654, help="Port for --serve mode (default: 7654).")
     args = parser.parse_args()
 
-    root = Path(args.project).resolve() if args.project else Path(__file__).parent.resolve()
+    root = Path(args.project).resolve() if args.project else Path.cwd()
 
     if args.validate:
         ok = validate_project(root, args.relationships_dir, args.loops_dir)
