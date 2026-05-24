@@ -1,0 +1,45 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# ── Generated visualizer output ───────────────────────────────────────────────
+# Produced by running cld_tool.py -- source-only repo, don't commit.
+# Applies to examples/, usecases/, and any nested project folder.
+causal_graph.json
+causal_loop_diagram.dot
+causal_loop_diagram.html
+causal_loop_system_map.html
+
+# ── Claude Code internal ───────────────────────────────────────────────────────
+.claude/
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Editors / IDEs ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.orig
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+secrets/
