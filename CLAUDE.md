@@ -1,4 +1,4 @@
-# LoopMap — Causal Intelligence Research Framework
+# LoopMap — LoopMap
 
 Read `agents.md` fully before doing anything in this repository. It contains all rules, file templates, and workflow steps you must follow.
 
@@ -41,7 +41,7 @@ python cld_tool.py --project usecases/<topic-name> --serve
 ## Repository layout
 
 ```
-Causal Intelligence Research Framework/
+LoopMap/
 ├── CLAUDE.md          ← you are here
 ├── agents.md          ← full rules and file templates — read this first
 ├── cld_tool.py        ← the diagram generator (run with --serve for live editing)

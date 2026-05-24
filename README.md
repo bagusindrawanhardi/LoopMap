@@ -1,4 +1,4 @@
-# LoopMap — Causal Intelligence Research Framework
+# LoopMap — LoopMap
 
 > **AI agents summarize. LoopMap makes them think — tracing causes, surfacing feedback loops, anchoring every claim to a dated source.**
 
@@ -99,7 +99,7 @@ No external Python packages required — stdlib only.
 ## Repository structure
 
 ```
-Causal Intelligence Research Framework/
+LoopMap/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
@@ -144,7 +144,7 @@ Causal Intelligence Research Framework/
 ```bash
 # 1. Clone the repo
 git clone https://github.com/bagusindrawanhardi/LoopMap.git
-cd "Causal Intelligence Research Framework"
+cd "LoopMap"
 
 # 2. Requirements: Python 3.10+ (stdlib only — nothing to pip install)
 python --version

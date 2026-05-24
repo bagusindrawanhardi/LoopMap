@@ -1,4 +1,4 @@
-# AGENTS.md — Causal Intelligence Research Framework
+# AGENTS.md — LoopMap
 
 A domain-neutral template for building causal loop research in plain Markdown.
 Copy this file into any new project folder and start writing.
@@ -60,7 +60,7 @@ python cld_tool.py --project . --validate
 ## Repository layout
 
 ```
-Causal Intelligence Research Framework/
+LoopMap/
 ├── agents.md          ← this file — framework rules for humans and AI agents
 ├── cld_tool.py        ← the tool
 ├── assets/            ← screenshots and static assets
