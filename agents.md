@@ -81,10 +81,10 @@ LoopMap/
 
 ## Minimum to generate a diagram
 
-Create your project folder **inside `usecases/`** — for example `usecases/us-iran-war/`:
+Create your project folder **inside `usecases/`** — for example `usecases/<your-topic>/` (replace with your actual topic name):
 
 ```
-usecases/us-iran-war/          ← YOUR PROJECT LIVES HERE, not in examples/
+usecases/<your-topic>/          ← YOUR PROJECT LIVES HERE, not in examples/
 ├── agents.md                  ← copy from root agents.md and customize
 ├── loops/
 │   └── L-01-my-first-loop.md
@@ -95,13 +95,13 @@ usecases/us-iran-war/          ← YOUR PROJECT LIVES HERE, not in examples/
 Run from the repo root:
 
 ```bash
-python cld_tool.py --project usecases/us-iran-war
+python cld_tool.py --project usecases/<your-topic>
 ```
 
 Or from inside the project folder:
 
 ```bash
-cd usecases/us-iran-war
+cd usecases/<your-topic>
 python ../../cld_tool.py
 ```
 
