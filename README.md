@@ -8,6 +8,30 @@ Write your research in plain Markdown. Run one Python script. Get an interactive
 
 ---
 
+## Overview
+
+We've gotten very good at predicting things we don't understand.
+
+AI tells us which customers will churn, which loans will default, which tumors are malignant — without ever explaining the mechanism. It works, so we stop asking why.
+
+But it breaks the moment something changes. A new policy. A market shock. A new competitor. Behavior models reflect the past. They have no theory of what happens next.
+
+That gap is what we built LoopMap to close — an open-source framework where AI agents construct causal maps from research. Every claim sourced. Every arrow backed by evidence. Every loop traceable to its root.
+
+The input is simple: *"research the escalation dynamics of the Mideast-geopolitics."*
+
+What comes back isn't a summary or a list of bullet points. It's a map of how the system holds itself together — the reinforcing loops between domestic political pressure and military posturing, the leverage points buried three steps away from where everyone is looking, the variables that seem irrelevant until you see what they connect to.
+
+And because the agents work from research, not intuition, every node and every link traces back to a source. Nothing is asserted — everything is cited.
+
+**Not what happened. Why it keeps happening.**
+
+I got tired of asking AI for answers and getting summaries. LoopMap is what we built instead.
+
+Geopolitics is just one application. The same approach maps telco churn dynamics, competitive strategy, organizational dysfunction — anywhere behavior emerges from feedback rather than linear cause.
+
+---
+
 ## Every feedback loop, isolated at a click
 
 Click any loop button in the toolbar — the diagram dims everything else and highlights exactly the variables and arrows that form that loop. Evidence sources update in the right panel in real time.
