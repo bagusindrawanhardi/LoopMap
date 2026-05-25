@@ -1081,7 +1081,7 @@ def write_system_map_html(
       margin-left: 4px;
     }}
     #timeline-slider {{
-      width: 220px;
+      width: clamp(80px, 12vw, 220px);
       height: 2px;
       accent-color: #1d4ed8;
       cursor: pointer;
@@ -1516,8 +1516,8 @@ def write_system_map_html(
 
     /* ── Left info panel ───────────────────────────────────────────── */
     #info-panel {{
-      width: 500px;
-      min-width: 500px;
+      width: clamp(180px, 26vw, 500px);
+      min-width: clamp(180px, 26vw, 500px);
       background: #f8fafc;
       border-right: 1px solid #d0d5dd;
       display: flex;
@@ -1564,8 +1564,8 @@ def write_system_map_html(
 
     /* ── Right evidence panel ──────────────────────────────────────── */
     #evidence-panel {{
-      width: 500px;
-      min-width: 500px;
+      width: clamp(180px, 26vw, 500px);
+      min-width: clamp(180px, 26vw, 500px);
       background: #f8fafc;
       border-left: 1px solid #d0d5dd;
       display: flex;
@@ -2714,8 +2714,15 @@ def write_system_map_html(
         applyTransform();
       }};
 
-      /* Auto-fit on load so any screen size / DPI works out of the box */
-      window.addEventListener('load', function() {{ resetZoom(); }});
+      /* Auto-fit on load so any screen size / DPI works out of the box.
+         Two rAF passes let the browser finish layout before measuring canvas. */
+      window.addEventListener('load', function() {{
+        requestAnimationFrame(function() {{
+          requestAnimationFrame(function() {{
+            resetZoom();
+          }});
+        }});
+      }});
 
       /* Mouse wheel zoom centered on cursor */
       svg.addEventListener('wheel', function(e) {{
