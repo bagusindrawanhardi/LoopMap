@@ -28,27 +28,28 @@ Copy this file into any new project folder and start writing.
 
 4. Record `release_date` for every evidence file. If the source has no publication date, flag it: `release_date: unknown — verify before citing`.
 
-5. After creating or updating any file in `loops/`, `relationships/`, or `evidence/`, regenerate the diagram:
+5. After creating or updating any file in `loops/`, `relationships/`, or `evidence/`, regenerate the diagram. Try each runner in order — use the first that works:
 
 ```bash
+# Windows binary (no Python needed) — place loopmap.exe in repo root
+loopmap.exe --project .
+
+# macOS / Linux binary
+./loopmap --project .
+
+# Python fallback
 python cld_tool.py --project .
 ```
 
-6. If `cld_tool.py` is not in the current folder, find it from the repo root:
-
-```bash
-python ../../cld_tool.py --project .
-```
-
-7. After generating, confirm the output files exist:
+6. After generating, confirm the output files exist:
    - `causal_loop_system_map.html` — open this in the browser to review the diagram
    - `causal_graph.json` — machine-readable graph
    - `causal_loop_diagram.dot` — Graphviz source
 
-8. Run validation before generating if you want a quality check first:
+7. Run validation before generating if you want a quality check first:
 
 ```bash
-python cld_tool.py --project . --validate
+loopmap.exe --project . --validate   # or ./loopmap / python cld_tool.py
 ```
 
 9. Never end a research session without regenerating the diagram. The HTML is the deliverable.
@@ -95,7 +96,7 @@ usecases/<your-topic>/          ← YOUR PROJECT LIVES HERE, not in examples/
 Run from the repo root:
 
 ```bash
-python cld_tool.py --project usecases/<your-topic>
+loopmap.exe --project usecases/<your-topic>   # or ./loopmap or python cld_tool.py
 ```
 
 Or from inside the project folder:
@@ -496,10 +497,12 @@ Map each policy to the loops it affects and the leverage point it targets.
 
 ## Step 6 — Generate the Diagram
 
-After every research session — or after any change to `loops/`, `relationships/`, or `evidence/` — run:
+After every research session — or after any change to `loops/`, `relationships/`, or `evidence/` — run (use whichever is available):
 
 ```bash
-python cld_tool.py --project .
+loopmap.exe --project .     # Windows binary
+./loopmap --project .       # macOS / Linux binary
+python cld_tool.py --project .  # Python fallback
 ```
 
 Then open `causal_loop_system_map.html` to review the result:
@@ -514,7 +517,7 @@ Then open `causal_loop_system_map.html` to review the result:
 If errors appear, run `--validate` first to diagnose:
 
 ```bash
-python cld_tool.py --project . --validate
+loopmap.exe --project . --validate   # or ./loopmap / python cld_tool.py
 ```
 
 Fix all `[ERR]` items before treating the diagram as final.

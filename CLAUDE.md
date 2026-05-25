@@ -1,4 +1,4 @@
-# LoopMap — LoopMap
+# LoopMap — Causal Intelligence Research Framework
 
 Read `agents.md` fully before doing anything in this repository. It contains all rules, file templates, and workflow steps you must follow.
 
@@ -18,11 +18,20 @@ The user will give you a topic. Do this:
 2. Create the required subfolders: `variables/`, `relationships/`, `loops/`, `evidence/`
 3. Copy the root `agents.md` into the new folder as your working reference
 4. Follow the evidence-first workflow in `agents.md` exactly
-5. After every batch of changes, regenerate the diagram:
+5. After every batch of changes, regenerate the diagram using whichever runner is available:
 
 ```bash
+# Windows binary (no Python needed)
+loopmap.exe --project usecases/<topic-name> --serve
+
+# macOS / Linux binary (no Python needed)
+./loopmap --project usecases/<topic-name> --serve
+
+# Python fallback
 python cld_tool.py --project usecases/<topic-name> --serve
 ```
+
+Try them in that order — use the first one that works.
 
 6. Open `http://localhost:7654` to review the diagram before reporting back
 
@@ -60,15 +69,25 @@ LoopMap/
 
 ## Diagram generation commands
 
+Use whichever runner is available — try in this order:
+
+| Runner | Command |
+|--------|---------|
+| Windows binary | `loopmap.exe --project usecases/<topic-name> --serve` |
+| macOS/Linux binary | `./loopmap --project usecases/<topic-name> --serve` |
+| Python | `python cld_tool.py --project usecases/<topic-name> --serve` |
+
+Binaries can be downloaded from the [Releases page](https://github.com/bagusindrawanhardi/LoopMap/releases) and placed in the repo root.
+
 ```bash
 # Generate and start live edit server (recommended)
-python cld_tool.py --project usecases/<topic-name> --serve
+loopmap.exe --project usecases/<topic-name> --serve
 
 # Generate only, no server
-python cld_tool.py --project usecases/<topic-name> --no-log
+loopmap.exe --project usecases/<topic-name> --no-log
 
 # Validate quality before generating
-python cld_tool.py --project usecases/<topic-name> --validate
+loopmap.exe --project usecases/<topic-name> --validate
 ```
 
 ---
