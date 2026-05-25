@@ -141,9 +141,26 @@ LoopMap/
 
 ## Quickstart
 
-### No Python? One command installs the binary
+### Step 1 — Get the files
 
-Clone the repo, then run the installer — it downloads the right binary for your OS automatically:
+**Option A — Git (recommended)**
+```bash
+git clone https://github.com/bagusindrawanhardi/LoopMap.git
+cd LoopMap
+```
+
+**Option B — No Git? Download ZIP**
+
+1. Go to [github.com/bagusindrawanhardi/LoopMap](https://github.com/bagusindrawanhardi/LoopMap)
+2. Click **Code → Download ZIP**
+3. Extract the ZIP — you get a `LoopMap-master/` folder
+4. Open that folder in your terminal / PowerShell
+
+---
+
+### Step 2 — No Python? One command installs the binary
+
+Run the installer from inside the repo folder — it downloads the right binary for your OS automatically:
 
 ```powershell
 # Windows (PowerShell) — run from the repo root
