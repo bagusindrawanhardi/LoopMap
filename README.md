@@ -401,4 +401,4 @@ When given `agents.md` as context, a capable agent will:
 
 ## License
 
-Apache 2.0 — see [LICENSE](LICENSE)
+AGPL-3.0 — see [LICENSE](LICENSE)
