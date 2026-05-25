@@ -141,24 +141,31 @@ LoopMap/
 
 ## Quickstart
 
-### No Python? Download the binary
+### No Python? One command installs the binary
 
-Pre-built binaries are attached to every [GitHub Release](https://github.com/bagusindrawanhardi/LoopMap/releases) — no Python or pip required.
+Clone the repo, then run the installer — it downloads the right binary for your OS automatically:
 
-| Platform | File |
-|----------|------|
-| Windows  | `loopmap-windows.exe` |
-| macOS    | `loopmap-macos` |
-| Linux    | `loopmap-linux` |
+```powershell
+# Windows (PowerShell) — run from the repo root
+.\install.ps1
+```
 
 ```bash
-# Windows — run from inside your project folder
-loopmap-windows.exe --project usecases/<your-topic>
+# macOS / Linux — run from the repo root
+bash install.sh
+```
+
+This places `loopmap.exe` (Windows) or `loopmap` (macOS/Linux) in the repo root. Then:
+
+```bash
+# Windows
+.\loopmap.exe --project usecases/<your-topic> --serve
 
 # macOS / Linux
-chmod +x loopmap-macos
-./loopmap-macos --project usecases/<your-topic>
+./loopmap --project usecases/<your-topic> --serve
 ```
+
+Binaries are also available to download manually from the [Releases page](https://github.com/bagusindrawanhardi/LoopMap/releases).
 
 ### Python users
 

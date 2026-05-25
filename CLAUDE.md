@@ -18,13 +18,26 @@ The user will give you a topic. Do this:
 2. Create the required subfolders: `variables/`, `relationships/`, `loops/`, `evidence/`
 3. Copy the root `agents.md` into the new folder as your working reference
 4. Follow the evidence-first workflow in `agents.md` exactly
-5. After every batch of changes, regenerate the diagram using whichever runner is available:
+5. After every batch of changes, regenerate the diagram. Use this decision tree:
 
+**Step 5a — ensure a runner exists (do once per machine):**
+- If `loopmap.exe` (Windows) or `./loopmap` (Mac/Linux) exists in the repo root → skip to 5b
+- If Python is available (`python --version` works) → skip to 5b
+- Otherwise, install the binary automatically:
+  ```bash
+  # Windows (PowerShell)
+  .\install.ps1
+
+  # macOS / Linux
+  bash install.sh
+  ```
+
+**Step 5b — regenerate:**
 ```bash
-# Windows binary (no Python needed)
+# Windows binary
 loopmap.exe --project usecases/<topic-name> --serve
 
-# macOS / Linux binary (no Python needed)
+# macOS / Linux binary
 ./loopmap --project usecases/<topic-name> --serve
 
 # Python fallback
@@ -54,6 +67,8 @@ LoopMap/
 ├── CLAUDE.md          ← you are here
 ├── agents.md          ← full rules and file templates — read this first
 ├── cld_tool.py        ← the diagram generator (run with --serve for live editing)
+├── install.ps1        ← downloads loopmap.exe on Windows (no Python needed)
+├── install.sh         ← downloads loopmap binary on macOS/Linux (no Python needed)
 ├── examples/          ← READ ONLY reference implementations
 │   └── mideast-geopolitics/
 └── usecases/          ← ALL new research goes here
