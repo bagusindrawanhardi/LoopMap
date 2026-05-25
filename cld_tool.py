@@ -2714,6 +2714,9 @@ def write_system_map_html(
         applyTransform();
       }};
 
+      /* Auto-fit on load so any screen size / DPI works out of the box */
+      window.addEventListener('load', function() {{ resetZoom(); }});
+
       /* Mouse wheel zoom centered on cursor */
       svg.addEventListener('wheel', function(e) {{
         e.preventDefault();
