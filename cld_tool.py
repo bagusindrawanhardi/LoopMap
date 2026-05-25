@@ -4097,11 +4097,12 @@ def make_loopmap_handler(root: Path, args):
         def _regen(self) -> None:
             """Regenerate project by running cld_tool.py as a subprocess.
             Always uses the latest code on disk — no server restart needed."""
-            script = str(Path(__file__).resolve())
-            result = subprocess.run(
-                [sys.executable, script, "--project", str(root), "--no-log"],
-                capture_output=True, text=True,
-            )
+            if getattr(sys, "frozen", False):
+                # Running as a PyInstaller bundle — call the exe directly (no script path)
+                cmd = [sys.executable, "--project", str(root), "--no-log"]
+            else:
+                cmd = [sys.executable, str(Path(__file__).resolve()), "--project", str(root), "--no-log"]
+            result = subprocess.run(cmd, capture_output=True, text=True)
             if result.returncode != 0:
                 raise RuntimeError(result.stderr or result.stdout or "Regeneration failed")
 
