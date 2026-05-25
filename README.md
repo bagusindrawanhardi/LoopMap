@@ -162,9 +162,9 @@ cd LoopMap
 
 Run the installer from inside the repo folder — it downloads the right binary for your OS automatically:
 
-```powershell
-# Windows (PowerShell) — run from the repo root
-.\install.ps1
+```bat
+# Windows — double-click install.bat, or run from the repo root:
+install.bat
 ```
 
 ```bash

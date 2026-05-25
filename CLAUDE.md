@@ -25,8 +25,8 @@ The user will give you a topic. Do this:
 - If Python is available (`python --version` works) → skip to 5b
 - Otherwise, install the binary automatically:
   ```bash
-  # Windows (PowerShell)
-  .\install.ps1
+  # Windows — double-click install.bat or run in terminal:
+  install.bat
 
   # macOS / Linux
   bash install.sh
@@ -67,7 +67,8 @@ LoopMap/
 ├── CLAUDE.md          ← you are here
 ├── agents.md          ← full rules and file templates — read this first
 ├── cld_tool.py        ← the diagram generator (run with --serve for live editing)
-├── install.ps1        ← downloads loopmap.exe on Windows (no Python needed)
+├── install.bat        ← downloads loopmap.exe on Windows (double-click, no Python needed)
+├── install.ps1        ← PowerShell alternative (requires execution policy change)
 ├── install.sh         ← downloads loopmap binary on macOS/Linux (no Python needed)
 ├── examples/          ← READ ONLY reference implementations
 │   └── mideast-geopolitics/
