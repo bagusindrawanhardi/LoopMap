@@ -11,13 +11,13 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            artifact: loopmap-windows.exe
+            release_name: loopmap-windows.exe
             binary: dist/loopmap.exe
           - os: ubuntu-latest
-            artifact: loopmap-linux
+            release_name: loopmap-linux
             binary: dist/loopmap
           - os: macos-latest
-            artifact: loopmap-macos
+            release_name: loopmap-macos
             binary: dist/loopmap
 
     runs-on: ${{ matrix.os }}
@@ -35,11 +35,15 @@ jobs:
       - name: Build binary
         run: pyinstaller --onefile --name loopmap cld_tool.py
 
+      - name: Rename binary for release
+        shell: bash
+        run: cp "${{ matrix.binary }}" "dist/${{ matrix.release_name }}"
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact }}
-          path: ${{ matrix.binary }}
+          name: ${{ matrix.release_name }}
+          path: dist/${{ matrix.release_name }}
 
   release:
     needs: build
@@ -57,7 +61,10 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/*
+          files: |
+            artifacts/loopmap-windows.exe
+            artifacts/loopmap-macos
+            artifacts/loopmap-linux
           body: |
             ## Download
 
@@ -67,12 +74,14 @@ jobs:
             | macOS    | `loopmap-macos` |
             | Linux    | `loopmap-linux` |
 
-            **Usage** (no Python required):
+            **No Python required.** Run `install.bat` (Windows) or `bash install.sh` (macOS/Linux) from the repo root to install automatically.
+
+            **Usage:**
             ```
             # Windows
-            loopmap-windows.exe --project usecases/<your-topic>
+            loopmap-windows.exe --project usecases/<your-topic> --serve
 
             # macOS / Linux
-            chmod +x loopmap-macos   # or loopmap-linux
-            ./loopmap-macos --project usecases/<your-topic>
+            chmod +x loopmap-macos
+            ./loopmap-macos --project usecases/<your-topic> --serve
             ```
