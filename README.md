@@ -1,4 +1,4 @@
-# LoopMap — LoopMap
+# LoopMap — Causal Intelligence Research Framework
 
 > **AI agents summarize. LoopMap makes them think — tracing causes, surfacing feedback loops, anchoring every claim to a dated source.**
 
