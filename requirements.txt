@@ -1,9 +1,0 @@
-# Causal Intelligence Research Framework — Python dependencies
-#
-# This project uses the Python standard library only.
-# No packages need to be installed via pip.
-#
-# Minimum Python version: 3.10
-# (uses: match/case, X | Y type unions, pathlib, re, json, math, html, argparse)
-#
-# Tested on: Python 3.14.3
