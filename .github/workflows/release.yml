@@ -74,14 +74,14 @@ jobs:
             | macOS    | `loopmap-macos` |
             | Linux    | `loopmap-linux` |
 
-            **No Python required.** Run `install.bat` (Windows) or `bash install.sh` (macOS/Linux) from the repo root to install automatically.
+            **No Python required.** Run `installer\install.bat` (Windows) or `bash installer/install.sh` (macOS/Linux) from the repo root to install automatically.
 
             **Usage:**
             ```
             # Windows
-            loopmap-windows.exe --project usecases/<your-topic> --serve
+            loopmap.exe --project usecases/<your-topic> --serve
 
             # macOS / Linux
-            chmod +x loopmap-macos
-            ./loopmap-macos --project usecases/<your-topic> --serve
+            chmod +x loopmap
+            ./loopmap --project usecases/<your-topic> --serve
             ```

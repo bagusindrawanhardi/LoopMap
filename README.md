@@ -126,12 +126,14 @@ No external Python packages required — stdlib only.
 LoopMap/
 ├── README.md
 ├── LICENSE
-├── .gitignore
-├── requirements.txt
 ├── CLAUDE.md                        ← auto-loaded by Claude Code — no setup needed
 ├── agents.md                        ← generic framework template (start here)
 ├── cld_tool.py                      ← the tool (one copy, used by all projects)
 ├── assets/                          ← screenshots and static assets for README
+├── installer/                       ← binary download scripts (no Python needed)
+│   ├── install.bat                  ← Windows (double-click or run from repo root)
+│   ├── install.sh                   ← macOS / Linux
+│   └── install.ps1                  ← PowerShell alternative
 │
 ├── examples/                        ← curated reference implementations
 │   └── mideast-geopolitics/         ← Middle East conflict & geopolitical dynamics
@@ -187,13 +189,13 @@ cd LoopMap
 Run the installer from inside the repo folder — it downloads the right binary for your OS automatically:
 
 ```bat
-# Windows — double-click install.bat, or run from the repo root:
-install.bat
+# Windows — double-click installer\install.bat, or run from the repo root:
+installer\install.bat
 ```
 
 ```bash
 # macOS / Linux — run from the repo root
-bash install.sh
+bash installer/install.sh
 ```
 
 This places `loopmap.exe` (Windows) or `loopmap` (macOS/Linux) in the repo root. Then:

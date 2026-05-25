@@ -133,8 +133,10 @@ LoopMap/
 ├── CLAUDE.md          ← you are here
 ├── agents.md          ← full rules and file templates — read this first
 ├── cld_tool.py        ← the diagram generator (single file, stdlib only)
-├── install.bat        ← downloads loopmap.exe on Windows (no Python needed)
-├── install.sh         ← downloads loopmap binary on macOS/Linux
+├── installer/         ← binary download scripts (no Python needed)
+│   ├── install.bat    ← Windows (double-click or run from repo root)
+│   ├── install.sh     ← macOS / Linux
+│   └── install.ps1    ← PowerShell alternative
 ├── .github/workflows/release.yml  ← PyInstaller build + GitHub Release on v* tag
 ├── examples/          ← READ ONLY reference implementations
 │   └── mideast-geopolitics/

@@ -6,7 +6,7 @@
 set -e
 
 REPO="bagusindrawanhardi/LoopMap"
-DIR="$(cd "$(dirname "$0")" && pwd)"
+DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 OS="$(uname -s)"
 case "$OS" in
