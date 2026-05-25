@@ -7,6 +7,7 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+*.spec
 
 # ── Generated visualizer output ───────────────────────────────────────────────
 # Produced by running cld_tool.py -- source-only repo, don't commit.

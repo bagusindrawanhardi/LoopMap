@@ -1,0 +1,78 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: loopmap-windows.exe
+            binary: dist/loopmap.exe
+          - os: ubuntu-latest
+            artifact: loopmap-linux
+            binary: dist/loopmap
+          - os: macos-latest
+            artifact: loopmap-macos
+            binary: dist/loopmap
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Build binary
+        run: pyinstaller --onefile --name loopmap cld_tool.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.binary }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*
+          body: |
+            ## Download
+
+            | Platform | File |
+            |----------|------|
+            | Windows  | `loopmap-windows.exe` |
+            | macOS    | `loopmap-macos` |
+            | Linux    | `loopmap-linux` |
+
+            **Usage** (no Python required):
+            ```
+            # Windows
+            loopmap-windows.exe --project usecases/<your-topic>
+
+            # macOS / Linux
+            chmod +x loopmap-macos   # or loopmap-linux
+            ./loopmap-macos --project usecases/<your-topic>
+            ```
