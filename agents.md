@@ -52,7 +52,7 @@ python cld_tool.py --project .
 loopmap.exe --project . --validate   # or ./loopmap / python cld_tool.py
 ```
 
-9. Never end a research session without regenerating the diagram. The HTML is the deliverable.
+8. Never end a research session without regenerating the diagram. The HTML is the deliverable.
 
 ---
 
